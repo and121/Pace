@@ -1,0 +1,61 @@
+namespace CL_PACKAGE_PACE_DEV.data;
+
+@Schema: 'CL_PACE_SCHEME_DEV'
+
+Context master {
+    Entity product {
+        Key ID_PRODUCT: Integer;
+        NAME: String(100);
+        DEFAULT: Integer;
+        DESCRIPTION: String(200);
+        OTHERS: String(10);
+        PAYMENTFRECUENCY: String(50);
+    };
+
+    Entity VALUEMAPPING {
+        key TECHNICAL_TABLE: String(100);
+        key TECHNICAL_FIELD: String(20);
+        key VALUE: String(20);
+        key NEW_VALUE: String(20); 
+    };
+    
+
+    Entity eligibility {
+        Key ID_ELIGIBILITY: Integer;
+        NAME: String (50);
+        DEFAULT: Integer;
+    };
+    
+    Entity inputCriteria {
+        key ID_PRODUCT              : Integer;
+        key NAME                    : String(20);
+        DESCRIPTION                 : String(200);
+        MINVALUE                    : Integer;
+        MAXVALUE                    : Integer;
+        PIEVALUE20                  : Integer;
+        PIEVALUE25                  : Integer;
+        PIEVALUE30                  : Integer;
+        PIEVALUE35                  : Integer;
+        PIEVALUE40                  : Integer;
+        DEFAULTKEY                  : String(3);
+        DEFAULTVALUE                : String(20);
+        DEFAULTOTHERS               : String(20);
+        UNIT                        : String(20);
+        MANDATORY                   : Integer;
+        RECALCULATEPOSSIBLEVALUES   : Integer;
+        REGEX                       : String(100);
+        FINANCECALCNOTAPPLICABLE    : Integer;
+    };
+
+    Entity loanTerm {
+        Key ID_PRODUCT: Integer;
+        Key KEY : Integer;
+        VALUE : String (20);         
+    }; 
+    
+    Entity deposit {
+        Key ID_PRODUCT: Integer;
+        Key KEY : Integer;
+        VALUE : String (20);         
+    }; 
+};
