@@ -1,0 +1,80 @@
+namespace CL_PACKAGE_PACE_DEV.data;
+@Schema: 'CL_PACE_SCHEME_DEV'
+
+Context pace {
+    Entity CUSTOMER {
+        Key IDENTITYNUMBER: String(11);
+        MESSAGEID: String(100);
+        FIRSTNAME: String(100);
+        LASTNAME: String(100); 
+        EMAIL: String(50);
+        MOBILEPHONENUMBER: Integer;
+        PHONE: Integer;
+        ID_DEALER_OFFICE: Integer;
+        ID_DEALER: Integer;
+        COMMENTS: String(100);
+        SALARY: Decimal(16,3);
+        WORKSTARTDAY: LocalDate; 
+        CONTRACTTYPE: String (1);
+        AGE: Integer;
+        CITY: String(100);
+        COMMUNE: String (100);
+        STREET: String (100);
+        LASTNAME_F: String (100);
+        LASTNAME_M: String (100);
+        CIVIL_STATE: String (20);
+        BIRTH_DATE: LocalDate; 
+        NATIONALITY: String (40);
+        SEX: String (1);
+    };
+    
+    Entity PREQUOTATION {
+        TARGETSYSTEMID: String(36);
+        FECHAPROCESO: UTCDateTime;
+        ID_DISTRIBUIDOR: Integer;
+        ID_SUCURSAL: Integer;
+        ID_VENDEDOR: String(10);
+        ID_USUARIO: String(10);
+        ID_USUARIOSAP: String(10);
+        ID_EJECUTIVO: String(10);
+        
+        //Cliente
+        RUT: String(20);
+        CORREO: String(50);
+        NOMBRE: String(100);
+        APE_PATERNO: String(100);
+        APE_MATERNO: String(100);
+        FECHA_NACIMIENTO: String(50); 
+        NOM_SOLICITANTE:String(100);
+        DIRECCION:String(100);
+        COMUNA: String(50);
+        CIUDAD:String(50);
+
+        //Credito
+        VALORVEH: Integer;
+        key CONTADO: Integer;
+        ID_FORMAPAGO: Integer;
+        ID_CREDITO: Integer;
+        key NUM_CUOTA:Integer;
+        MON_TOTAL: Integer;
+        SEGURO_DEGRA:String(1);
+        DIA_PAGO:Integer;
+        FECHA_VENCIMIENTO: String(50);
+        
+        //Datos Vehículos
+        ID_MODELO: Integer;
+        ID_VERSION: Integer;
+        MONTO_RETOMA: Integer;
+        NUEVOUSADO: String(1);
+        ANOFABRICACION: Integer;
+        CANT_VEH: Integer;
+        
+        key TARGETSYSTEMID_REF: String(36);
+        VFMG: Integer;
+        VALOR_CUOTA: Integer;
+        JSON: String(2000);
+        CAE: String(10);
+        CONTADO_PORC: String(10); 
+    };
+    
+};
