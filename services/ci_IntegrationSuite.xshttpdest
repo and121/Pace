@@ -1,0 +1,11 @@
+description = "SAP INTEGRATION SUITE PRD";
+host = "nissancpiprd.it-cpi003-rt.cfapps.us10.hana.ondemand.com";
+//host = "l5355-iflmap.hcisbp.us2.hana.ondemand.com"; //QAS
+port = 443;
+proxyType = none;
+proxyHost = "proxy";
+proxyPort = 80;
+authType = basic;
+useSSL = true;
+sslHostCheck = true;
+sslAuth = client;
